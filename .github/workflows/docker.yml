@@ -28,6 +28,7 @@ jobs:
       - name: Compare upstream main with the last build
         id: state
         env:
+          GH_TOKEN: ${{ github.token }}
           FORCE_BUILD: ${{ inputs.force || false }}
         run: |
           set -euo pipefail
